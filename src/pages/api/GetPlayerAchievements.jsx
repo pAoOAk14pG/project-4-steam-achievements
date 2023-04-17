@@ -7,6 +7,10 @@ export default async (req, res) => {
       method: 'GET',
       url: `http://api.steampowered.com/ISteamUserStats/GetPlayerAchievements/v0001/?appid=${AppID}&key=${process.env.STEAM_KEY}&steamid=${SteamID}&l=en`
       // ONLY WORKS IF USER'S "Game details" SETTINGS IS SET TO "Public"!
+      // l is the language query and is hypothetically supposed to return achievement details in other languages
+      // However in practice it doesn't work lmao
+      // The only reason it's there is that for some reason including the language query
+      // returns the actual name and description of the achievements
     })
 
     return res.json(resp.data)

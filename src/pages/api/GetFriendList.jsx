@@ -6,8 +6,8 @@ export default async (req, res) => {
     const resp = await axios({
       method: 'GET',
       url: `http://api.steampowered.com/ISteamUser/GetFriendList/v0001/?key=${process.env.STEAM_KEY}&steamid=${SteamID}`
-      // Only returns SteamID and friended time in Unix time
-      // Will need to do a lookup with GetPlayerSummaries to get more information on the friends
+      // Only returns the SteamID of friends
+      // Will require another lookup with GetPlayerSummaries to get info on said friends
     })
 
     return res.json(resp.data)
