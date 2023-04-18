@@ -7,6 +7,7 @@ export default async (req, res) => {
       method: 'GET',
       url: `http://api.steampowered.com/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v0002/?gameid=${AppID}`
       // Only returns internal achievement names and global achievement percentages
+      // Use GetSchemaForGame to get more info on achievements
     })
 
     return res.json(resp.data)

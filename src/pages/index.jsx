@@ -23,7 +23,7 @@ export default function Home() {
       })}
       onSubmit={(values) => axios({
         method: 'GET',
-        url: `api/GetGlobalAchievementPercentagesForApp?AppID=${values.AppID}`,
+        url: `api/GetPlayerAchievements?AppID=${values.AppID}&SteamID=${values.SteamID}`,
         data: values
       }).then(() => {
         console.log(values)
